@@ -132,11 +132,11 @@ const styles = StyleSheet.create({
     borderRadius:50
   },
   deliveryText:{
-    marginTop:30,
+    marginTop:spacing[8],
     marginBottom:5,
   },
   searchView:{
-    marginVertical:30,
+    marginVertical:spacing[8],
     flexDirection:'row',
   },
   searchInput:{
@@ -148,12 +148,12 @@ const styles = StyleSheet.create({
    },
    categoriesView:{
     paddingTop:15,
-    paddingBottom:20,
+    paddingBottom:spacing[5],
     marginLeft:-20
    },
    categoryItem:{
-    marginRight: 20,
-    borderRadius: 20,
+    marginRight: spacing[5],
+    borderRadius: spacing[5],
     shadowColor: colors.black,
     shadowOffset: {
       width: 0,
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     marginTop: 25,
-    marginHorizontal: 20,
+    marginHorizontal: spacing[5],
    },
    categoryTitle:{
     textAlign: 'center',
@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
    categorySelector:{
     alignSelf: 'center',
     justifyContent: 'center',
-    marginVertical: 20,
+    marginVertical: spacing[5],
     width: 26,
     height: 26,
     borderRadius: 26,
@@ -195,8 +195,8 @@ const styles = StyleSheet.create({
    },
    popularWeek:{
     flexDirection:'row',
-    paddingLeft:20,
-    paddingVertical:20
+    paddingLeft:spacing[5],
+    paddingVertical:spacing[5]
    },
    popularTitle:{
     paddingLeft:22,
@@ -208,18 +208,18 @@ const styles = StyleSheet.create({
    },
    popularPlus:{
     backgroundColor:colors.yellow,
-    paddingVertical:20,
-    paddingHorizontal:40,
+    paddingVertical:spacing[5],
+    paddingHorizontal:spacing[10],
     borderTopRightRadius:25,
     borderBottomLeftRadius:25,
    },
    popularRatings:{
     flexDirection:'row',
     alignItems:'center',
-    paddingLeft:20
+    paddingLeft:spacing[5]
    },
    popularImageView:{
-    marginLeft:40
+    marginLeft:spacing[10]
    },
    popularImage:{
     width: 210,
