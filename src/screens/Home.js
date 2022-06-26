@@ -20,7 +20,7 @@ const Home = () => {
         <Text preset="h1">Delivery</Text>
        </View>
    {/*  search section  */}
-       <View style={styles.searchView}>
+      <View style={styles.searchView}>
        <EvilIcons name="search" style={{paddingTop:6}} size={24} color="black" />       
         <TextInput
           placeholder="Search..."
@@ -29,6 +29,10 @@ const Home = () => {
           style={styles.searchInput}/>
         
        </View>
+  {/* Categories section*/}
+      <View style={styles.categoriesView}>
+       <Text preset="h3">Categories</Text>
+      </View>
 
        </ScrollView>
       </SafeAreaView>
@@ -59,7 +63,7 @@ const styles = StyleSheet.create({
     marginBottom:5,
   },
   searchView:{
-    marginTop:30,
+    marginVertical:30,
     flexDirection:'row',
   },
   searchInput:{
@@ -68,7 +72,10 @@ const styles = StyleSheet.create({
     borderColor:colors.grey,
     width:300,
     paddingVertical:spacing[1]
-   }
+   },
+   categoriesView:{
+   
+   },
 })
 
 
