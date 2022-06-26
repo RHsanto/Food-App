@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
     marginTop:21
    },
    popularPlus:{
-    backgroundColor:'#F5CA48',
+    backgroundColor:colors.yellow,
     paddingVertical:20,
     paddingHorizontal:40,
     borderTopRightRadius:25,
