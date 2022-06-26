@@ -1,7 +1,7 @@
 
 import { FlatList, Image, SafeAreaView, ScrollView, StyleSheet, TextInput, View } from "react-native";
 import Text from "../components/Text/Text";
-import { Feather ,EvilIcons,MaterialCommunityIcons} from '@expo/vector-icons';
+import { Feather ,EvilIcons,MaterialCommunityIcons,AntDesign,FontAwesome} from '@expo/vector-icons';
 import { spacing } from "../theme/spacing";
 import { colors } from "../theme/color";
 import { Categories_Data } from "../data/categories.data";
@@ -67,23 +67,33 @@ const Home = () => {
       </View>
 {/* Popular section*/}
      <View style={styles.popularView}>
-      <Text preset="h3">Popular</Text>
+      <Text preset="h3" style={{marginBottom:11,}}>Popular</Text>
       {popularData.map((item)=>(
         <View style={styles.popularItemView}>
-          <View>
+          <>
             <View style={styles.popularWeek}>
             <MaterialCommunityIcons name="crown" size={12} color={colors.yellow} />
             <Text preset="h4" style={{marginLeft:10}}>top of the week</Text>
             </View>
             <View style={styles.popularTitle}>
              <Text preset="h4">{item.title}</Text>
-             <Text preset="small" style={{color:'#C4C4C4'}}>weight {item.weight}</Text>
+             <Text preset="small" style={{color:'#C4C4C4',marginTop:5}}>weight {item.weight}</Text>
             </View>
-          </View>
+            <View style={styles.popularAddView}>
+              <View style={styles.popularPlus}>
+            <AntDesign name="plus" size={12} color="black" />
+              </View>
+              <View  style={styles.popularRatings}>
+              <FontAwesome name="star" size={12} color="black" />
+               <Text preset="small">{item.rating}</Text>
+              </View>
+            </View>
+          </>
          <View></View>
         </View>
       ))}
      </View>
+   
        </ScrollView>
       </SafeAreaView>
     </View>
@@ -161,9 +171,35 @@ const styles = StyleSheet.create({
    categoryIcon:{
     alignSelf: 'center',
    },
-   popularWeek:{
-    flexDirection:'row'
+   popularView:{
+   
    },
+   popularItemView:{
+    backgroundColor:'white',
+    borderRadius:26,
+    marginBottom:20
+   },
+   popularWeek:{
+    flexDirection:'row',
+    paddingLeft:20,
+    paddingVertical:20
+   },
+   popularTitle:{
+    paddingLeft:22,
+   },
+   popularAddView:{
+    flexDirection:'row',
+    alignItems:'center',
+    marginTop:10
+   },
+   popularPlus:{
+    backgroundColor:'#F5CA48',
+    paddingVertical:20,
+    paddingHorizontal:40,
+    borderTopRightRadius:25,
+    borderBottomLeftRadius:25,
+   },
+   popularRatings:{},
 })
 
 
