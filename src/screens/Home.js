@@ -8,11 +8,26 @@ import { Categories_Data } from "../data/categories.data";
 const Home = () => {
   const renderCategoriesItem =({item})=>{
     return(
-      <View style={styles.categoryItem}>
+      <View
+      style={[
+        styles.categoryItem,
+        {
+          backgroundColor: item.selected ? colors.yellow : colors.white,
+          marginLeft: item.id == 1 ? 20 : 0,
+        },
+      ]}
+       >
         <Image style={styles.categoryImage} source={item.image} />
-        <Text style={styles.categoryTitle}>{item.title}</Text>
-        <View style={styles.categorySelector}>
-        <Feather name="chevron-right" size={8} style={styles.categoryIcon} />
+        <Text preset="h4" style={styles.categoryTitle}>{item.title}</Text>
+        <View 
+         style={[
+          styles.categorySelector,
+          {
+            backgroundColor: item.selected ? colors.white : colors.pink,
+          },
+        ]}>
+        <Feather name="chevron-right" size={8} style={styles.categoryIcon}  
+         color={item.selected ? colors.black : colors.white} />
         </View>
       </View>
     )
@@ -44,13 +59,15 @@ const Home = () => {
   {/* Categories section*/}
       <View >
        <Text preset="h3">Categories</Text>
+       <View style={styles.categoriesView}>
        <FlatList 
         data={Categories_Data}
         renderItem={renderCategoriesItem}
         keyExtractor={(item)=>item.id}
         horizontal={true}
-        style={styles.categoriesView}
        />
+       </View>
+  
       </View>
 
        </ScrollView>
@@ -94,10 +111,44 @@ const styles = StyleSheet.create({
    },
    categoriesView:{
     paddingTop:15,
-    paddingBottom:20
+    paddingBottom:20,
+    marginLeft:-20
    },
    categoryItem:{
-    backgroundColor:colors.yellow
+    backgroundColor:colors.yellow,
+    marginRight: 20,
+    borderRadius: 20,
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.05,
+    shadowRadius: 10,
+    elevation: 2,
+   },
+   categoryImage:{
+    width: 60,
+    height: 60,
+    marginTop: 25,
+    alignSelf: 'center',
+    marginHorizontal: 20,
+   },
+   categoryTitle:{
+    textAlign: 'center',
+    marginTop: 10,
+   },
+   categorySelector:{
+    alignSelf: 'center',
+    justifyContent: 'center',
+    marginTop: 20,
+    width: 26,
+    height: 26,
+    borderRadius: 26,
+    marginBottom: 20,
+   },
+   categoryIcon:{
+    alignSelf: 'center',
    }
 })
 

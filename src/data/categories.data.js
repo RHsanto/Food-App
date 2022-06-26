@@ -9,13 +9,13 @@ export const Categories_Data = [
   id:2,
   image: require('../../assets/images/shrimp-icon.png'),
   title:'Seafood',
-  selected:true,
+  selected:false,
 },
 {
   id:3,
   image: require('../../assets/images/soda-icon.png'),
   title:'Soft Drinks',
-  selected:true,
+  selected:false,
 },
 
 
