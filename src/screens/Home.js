@@ -70,7 +70,7 @@ const Home = () => {
       <Text preset="h3" style={{marginBottom:11,}}>Popular</Text>
       {popularData.map((item)=>(
         <View style={styles.popularItemView}>
-          <>
+          <View>
             <View style={styles.popularWeek}>
             <MaterialCommunityIcons name="crown" size={12} color={colors.yellow} />
             <Text preset="h4" style={{marginLeft:10}}>top of the week</Text>
@@ -85,10 +85,13 @@ const Home = () => {
               </View>
               <View  style={styles.popularRatings}>
               <FontAwesome name="star" size={12} color="black" />
-               <Text preset="small">{item.rating}</Text>
+               <Text preset="small" style={{marginLeft:5}}>{item.rating}</Text>
               </View>
             </View>
-          </>
+          </View>
+          <View >
+            <Image source={item.image} style={styles.popularImage} />
+          </View>
          <View></View>
         </View>
       ))}
@@ -175,9 +178,11 @@ const styles = StyleSheet.create({
    
    },
    popularItemView:{
+    flexDirection:'row',
     backgroundColor:'white',
     borderRadius:26,
-    marginBottom:20
+    marginBottom:20,
+    overflow:'hidden'
    },
    popularWeek:{
     flexDirection:'row',
@@ -190,7 +195,7 @@ const styles = StyleSheet.create({
    popularAddView:{
     flexDirection:'row',
     alignItems:'center',
-    marginTop:10
+    marginTop:21
    },
    popularPlus:{
     backgroundColor:'#F5CA48',
@@ -199,7 +204,19 @@ const styles = StyleSheet.create({
     borderTopRightRadius:25,
     borderBottomLeftRadius:25,
    },
-   popularRatings:{},
+   popularRatings:{
+    flexDirection:'row',
+    alignItems:'center',
+    paddingLeft:20
+   },
+   popularImage:{
+    width:210,
+    height:125,
+    marginLeft:20,
+    marginVertical:18
+
+  }
+  
 })
 
 
