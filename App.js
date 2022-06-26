@@ -8,13 +8,14 @@ import {
   Montserrat_700Bold,
  
 } from '@expo-google-fonts/montserrat';
-import { typography } from './src/theme/typography';
-import Text from './src/components/Text/Text';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './src/screens/Home';
 
+const Stack = createNativeStackNavigator();
 export default function App() {
   let [fontsLoaded] = useFonts({
     Montserrat_400Regular,
-    Montserrat_500Medium,
     Montserrat_600SemiBold,
     Montserrat_700Bold,
   });
@@ -23,18 +24,15 @@ export default function App() {
     return null;}
 
   return (
-    <View style={styles.container}>
-      <Text style={{ fontFamily:typography.greyFont,}}>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+   <>
+   <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+      </Stack.Navigator>
+    </NavigationContainer>
+    <StatusBar style="light" />
+   </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
