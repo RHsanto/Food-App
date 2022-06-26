@@ -46,10 +46,10 @@ export default function App() {
 
   if (!fontsLoaded) {
     return null;}
-    
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text style={{ fontFamily: 'Montserrat_400Regular',}}>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
     </View>
   );
