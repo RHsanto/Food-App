@@ -54,18 +54,20 @@ const Home = () => {
        </View>
   {/* Categories section*/}
       <View >
-       <Text preset="h3">Categories</Text>
-       <View style={styles.categoriesView}>
-       <FlatList 
-        data={Categories_Data}
-        renderItem={renderCategoriesItem}
-        keyExtractor={(item)=>item.id}
-        horizontal={true}
-       />
-       </View>
-  
+        <Text preset="h3">Categories</Text>
+         <View style={styles.categoriesView}>
+          <FlatList 
+           data={Categories_Data}
+           renderItem={renderCategoriesItem}
+           keyExtractor={(item)=>item.id}
+           horizontal={true}
+          />
+        </View>
       </View>
-
+{/* Popular section*/}
+     <View style={styles.popularView}>
+      <Text preset="h3">Popular</Text>
+     </View>
        </ScrollView>
       </SafeAreaView>
     </View>
