@@ -1,10 +1,22 @@
 
-import { Image, SafeAreaView, ScrollView, StyleSheet, TextInput, View } from "react-native";
+import { FlatList, Image, SafeAreaView, ScrollView, StyleSheet, TextInput, View } from "react-native";
 import Text from "../components/Text/Text";
 import { Feather ,EvilIcons} from '@expo/vector-icons';
 import { spacing } from "../theme/spacing";
 import { colors } from "../theme/color";
+import { Categories_Data } from "../data/categories.data";
 const Home = () => {
+  const renderCategoriesItem =({item})=>{
+    return(
+      <View style={styles.categoryItem}>
+        <Image style={styles.categoryImage} source={item.image} />
+        <Text style={styles.categoryTitle}>{item.title}</Text>
+        <View style={styles.categorySelector}>
+        <Feather name="chevron-right" size={8} style={styles.categoryIcon} />
+        </View>
+      </View>
+    )
+  }
   return (
     <View style={styles.container}>
       <SafeAreaView>
@@ -30,8 +42,15 @@ const Home = () => {
         
        </View>
   {/* Categories section*/}
-      <View style={styles.categoriesView}>
+      <View >
        <Text preset="h3">Categories</Text>
+       <FlatList 
+        data={Categories_Data}
+        renderItem={renderCategoriesItem}
+        keyExtractor={(item)=>item.id}
+        horizontal={true}
+        style={styles.categoriesView}
+       />
       </View>
 
        </ScrollView>
@@ -74,8 +93,12 @@ const styles = StyleSheet.create({
     paddingVertical:spacing[1]
    },
    categoriesView:{
-   
+    paddingTop:15,
+    paddingBottom:20
    },
+   categoryItem:{
+    backgroundColor:colors.yellow
+   }
 })
 
 
