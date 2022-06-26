@@ -69,7 +69,12 @@ const Home = () => {
      <View style={styles.popularView}>
       <Text preset="h3" style={{marginBottom:11,}}>Popular</Text>
       {popularData.map((item)=>(
-        <View style={styles.popularItemView}>
+        <View  style={[
+          styles.popularItemView,
+          {
+            marginTop: item.id == 1 ? 10 : 20,
+          },
+        ]}>
           <View>
             <View style={styles.popularWeek}>
             <MaterialCommunityIcons name="crown" size={12} color={colors.yellow} />
@@ -89,7 +94,7 @@ const Home = () => {
               </View>
             </View>
           </View>
-          <View >
+          <View style={styles.popularImageView}>
             <Image source={item.image} style={styles.popularImage} />
           </View>
          <View></View>
@@ -181,7 +186,6 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     backgroundColor:'white',
     borderRadius:26,
-    marginBottom:20,
     overflow:'hidden'
    },
    popularWeek:{
@@ -209,12 +213,14 @@ const styles = StyleSheet.create({
     alignItems:'center',
     paddingLeft:20
    },
+   popularImageView:{
+    marginLeft:40
+   },
    popularImage:{
-    width:210,
-    height:125,
-    marginLeft:20,
-    marginVertical:18
-
+    width: 210,
+    height: 125,
+    resizeMode: 'contain',
+    marginTop:18
   }
   
 })
