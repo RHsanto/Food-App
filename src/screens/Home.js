@@ -1,10 +1,11 @@
 
 import { FlatList, Image, SafeAreaView, ScrollView, StyleSheet, TextInput, View } from "react-native";
 import Text from "../components/Text/Text";
-import { Feather ,EvilIcons} from '@expo/vector-icons';
+import { Feather ,EvilIcons,MaterialCommunityIcons} from '@expo/vector-icons';
 import { spacing } from "../theme/spacing";
 import { colors } from "../theme/color";
 import { Categories_Data } from "../data/categories.data";
+import { popularData } from "../data/popularData";
 const Home = () => {
   const renderCategoriesItem =({item})=>{
     return(
@@ -67,6 +68,21 @@ const Home = () => {
 {/* Popular section*/}
      <View style={styles.popularView}>
       <Text preset="h3">Popular</Text>
+      {popularData.map((item)=>(
+        <View style={styles.popularItemView}>
+          <View>
+            <View style={styles.popularWeek}>
+            <MaterialCommunityIcons name="crown" size={12} color={colors.yellow} />
+            <Text preset="h4" style={{marginLeft:10}}>top of the week</Text>
+            </View>
+            <View style={styles.popularTitle}>
+             <Text preset="h4">{item.title}</Text>
+             <Text preset="small" style={{color:'#C4C4C4'}}>weight {item.weight}</Text>
+            </View>
+          </View>
+         <View></View>
+        </View>
+      ))}
      </View>
        </ScrollView>
       </SafeAreaView>
@@ -144,7 +160,10 @@ const styles = StyleSheet.create({
    },
    categoryIcon:{
     alignSelf: 'center',
-   }
+   },
+   popularWeek:{
+    flexDirection:'row'
+   },
 })
 
 
