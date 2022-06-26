@@ -1,12 +1,12 @@
 
-import { FlatList, Image, SafeAreaView, ScrollView, StyleSheet, TextInput, View } from "react-native";
+import { FlatList, Image, SafeAreaView, ScrollView, StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
 import Text from "../components/Text/Text";
 import { Feather ,EvilIcons,MaterialCommunityIcons,AntDesign,FontAwesome} from '@expo/vector-icons';
 import { spacing } from "../theme/spacing";
 import { colors } from "../theme/color";
 import { Categories_Data } from "../data/categories.data";
 import { popularData } from "../data/popularData";
-const Home = () => {
+const Home = ({navigation}) => {
   const renderCategoriesItem =({item})=>{
     return(
       <View
@@ -69,12 +69,16 @@ const Home = () => {
      <View style={styles.popularView}>
       <Text preset="h3" style={{marginBottom:11,}}>Popular</Text>
       {popularData.map((item)=>(
-        <View  style={[
-          styles.popularItemView,
-          {
-            marginTop: item.id == 1 ? 10 : 20,
-          },
-        ]}>
+      <TouchableOpacity
+      key={item.id}
+      onPress={() =>
+        navigation.navigate('Details', {
+          item: item,
+        })
+      }
+      >
+          <View  style={[styles.popularItemView,
+            {marginTop: item.id == 1 ? 10 : 20,},]}>
           <View>
             <View style={styles.popularWeek}>
             <MaterialCommunityIcons name="crown" size={12} color={colors.yellow} />
@@ -99,6 +103,7 @@ const Home = () => {
           </View>
          <View></View>
         </View>
+      </TouchableOpacity>
       ))}
      </View>
    
