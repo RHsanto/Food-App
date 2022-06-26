@@ -1,7 +1,7 @@
 
-import { Image, SafeAreaView, ScrollView, StyleSheet, View } from "react-native";
+import { Image, SafeAreaView, ScrollView, StyleSheet, TextInput, View } from "react-native";
 import Text from "../components/Text/Text";
-import { Feather ,MaterialIcons} from '@expo/vector-icons';
+import { Feather ,EvilIcons} from '@expo/vector-icons';
 import { spacing } from "../theme/spacing";
 import { colors } from "../theme/color";
 const Home = () => {
@@ -21,10 +21,13 @@ const Home = () => {
        </View>
    {/*  search section  */}
        <View style={styles.searchView}>
-       <MaterialIcons name="search" size={24} color="black" />
-        <View style={styles.searchText}>
-        <Text preset="h4" style={{ color:colors.grey,}} > Search...</Text>
-        </View>
+       <EvilIcons name="search" style={{paddingTop:6}} size={24} color="black" />       
+        <TextInput
+          placeholder="Search..."
+          placeholderTextColor={colors.grey}
+          autoCorrect={false}
+          style={styles.searchInput}/>
+        
        </View>
 
        </ScrollView>
@@ -58,16 +61,14 @@ const styles = StyleSheet.create({
   searchView:{
     marginTop:30,
     flexDirection:'row',
-    
   },
-  searchText:{
-   marginLeft:spacing[3],
-   borderBottomWidth:2,
-   borderColor:colors.grey,
-   width:300,
-
-   
-  }
+  searchInput:{
+    marginLeft:spacing[3],
+    borderBottomWidth:2,
+    borderColor:colors.grey,
+    width:300,
+    paddingVertical:spacing[1]
+   }
 })
 
 
