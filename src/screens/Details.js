@@ -8,7 +8,7 @@ export default function  Details(){
       <ScrollView>
       <View>
       <Text>Hello Details</Text>
-    </View>
+     </View>
       </ScrollView>
     </SafeAreaView>
   );
