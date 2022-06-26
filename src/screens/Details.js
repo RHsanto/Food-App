@@ -1,12 +1,16 @@
 
-import { View } from 'react-native';
+import { SafeAreaView, ScrollView, View } from 'react-native';
 import Text from '../components/Text/Text';
 
 export default function  Details(){
   return (
-    <View>
+    <SafeAreaView>
+      <ScrollView>
+      <View>
       <Text>Hello Details</Text>
     </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
