@@ -17,6 +17,16 @@ export const Categories_Data = [
   title:'Soft Drinks',
   selected:false,
 },
-
-
+{
+  id:4,
+  image: require('../../assets/images/shrimp-icon.png'),
+  title:'Seafood',
+  selected:false,
+},
+{
+  id:5,
+  image: require('../../assets/images/pizza-icon.png'),
+  title:'Pizza',
+  selected:false,
+},
 ]
