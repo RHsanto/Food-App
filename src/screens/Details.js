@@ -38,7 +38,7 @@ export default function  Details({route,navigation}){
       <View style={styles.PizzaInfoList}>
       <View>
         <Text style={styles.PizzaInfoColor}>Size</Text>
-        <Text preset='h3'>{sizeName} {sizeNumber}</Text>
+        <Text preset='h3'>{sizeName} {sizeNumber}"</Text>
       </View>
       <View style={styles.crustView}>
         <Text style={styles.PizzaInfoColor}>Curst</Text>
@@ -50,8 +50,8 @@ export default function  Details({route,navigation}){
       </View>
 
       </View>
-      <View style={styles.PizzaImageView}>
-      <Image source={image} />
+      <View >
+      <Image source={image} style={styles.PizzaImage} />
       </View>
      </View>
 
@@ -103,9 +103,9 @@ const styles = StyleSheet.create({
   crustView:{
     paddingVertical:spacing[5]
   },
-  PizzaImageView:{
-  height: 176,
-  width: 296,
+  PizzaImage:{
+    resizeMode: 'contain',
+    marginLeft: 50,
 
   }
 })
