@@ -54,7 +54,15 @@ export default function  Details({route,navigation}){
       <Image source={image} style={styles.PizzaImage} />
       </View>
      </View>
+ {/* Ingredients */}
+    <View style={styles.ingredientsView}>
+      <Text preset='h3'>Ingredients</Text>
+  {/* ingredients list */}
+    <View style={styles.ingredientsItemList}>
+   
+    </View>
 
+    </View>
      </View>
       </ScrollView>
     </SafeAreaView>
@@ -106,6 +114,8 @@ const styles = StyleSheet.create({
   PizzaImage:{
     resizeMode: 'contain',
     marginLeft: 50,
-
-  }
+  },
+  ingredientsView:{
+    marginTop:spacing[10]
+  },
 })
