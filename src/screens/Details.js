@@ -83,6 +83,12 @@ export default function  Details({route,navigation}){
     </View>
 
     </View>
+{/* order btn */}
+  <View style={styles.orderBtnView}>
+   <Text style={styles.btnText}>Place an order</Text>
+   <AntDesign name="right" size={10} color="black" />
+  </View>
+
      </View>
       </ScrollView>
     </SafeAreaView>
@@ -156,5 +162,19 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.05,
     shadowRadius: 10,
     elevation: 2,
+  },
+  orderBtnView:{
+    marginVertical:58,
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'center',
+    backgroundColor:colors.yellow,
+    padding:23,
+    borderRadius:50,
+  },
+  btnText:{
+    fontSize:14,
+    fontFamily:typography.regular,
+    marginRight:12
   }
 })
