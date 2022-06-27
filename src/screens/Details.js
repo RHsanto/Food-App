@@ -84,10 +84,15 @@ export default function  Details({route,navigation}){
 
     </View>
 {/* order btn */}
+  <TouchableOpacity
+  onPress={()=>{
+    alert('Button')
+  }}>
   <View style={styles.orderBtnView}>
    <Text style={styles.btnText}>Place an order</Text>
    <AntDesign name="right" size={10} color="black" />
   </View>
+  </TouchableOpacity>
 
      </View>
       </ScrollView>
