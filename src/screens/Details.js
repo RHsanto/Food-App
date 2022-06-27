@@ -36,13 +36,13 @@ export default function  Details({route,navigation}){
  {/*Pizza info*/}
      <View style={styles.PizzaInfoView}>
       <View style={styles.PizzaInfoList}>
-      <View style={styles.sizeView}>
+      <View>
         <Text style={styles.PizzaInfoColor}>Size</Text>
         <Text preset='h3'>{sizeName} {sizeNumber}</Text>
       </View>
       <View style={styles.crustView}>
-      <Text style={styles.PizzaInfoColor}>Curst</Text>
-      <Text preset='h3'>{crust} </Text>
+        <Text style={styles.PizzaInfoColor}>Curst</Text>
+        <Text preset='h3'>{crust} </Text>
       </View>
       <View >
        <Text style={styles.PizzaInfoColor}>Delivery in</Text>
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     color:colors.grey,
     marginBottom:5,
     fontSize:14,
-    
+    fontFamily:'Montserrat_500Medium',
   },
   crustView:{
     paddingVertical:spacing[5]
