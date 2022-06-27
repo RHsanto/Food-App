@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',
     backgroundColor:colors.yellow,
-    padding:23,
+    padding:spacing[6],
     borderRadius:50,
   },
   btnText:{
