@@ -1,5 +1,5 @@
 
-import { Image, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { FlatList, Image, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import Text from '../components/Text/Text';
 import { spacing } from "../theme/spacing";
 import { AntDesign ,FontAwesome} from '@expo/vector-icons';
@@ -8,7 +8,21 @@ import { typography } from '../theme/typography';
 export default function  Details({route,navigation}){
   // here catch item component
   const { item } = route.params;
-  const {title,price,image,deliveryTime,crust,sizeName,sizeNumber} = item
+  const {title,price,image,deliveryTime,crust,sizeName,sizeNumber,ingredients} = item;
+
+  const renderIngredientsItem = ({ item }) => {
+    return (
+      <View
+        style={[
+          styles.ingredientItemWrapper,
+          {
+            marginLeft: item.id === '1' ? 20 : 0,
+          },
+        ]}>
+        <Image source={item.image} />
+      </View>
+    );
+  };
   return (
     <SafeAreaView>
       <ScrollView>
@@ -59,7 +73,13 @@ export default function  Details({route,navigation}){
       <Text preset='h3'>Ingredients</Text>
   {/* ingredients list */}
     <View style={styles.ingredientsItemList}>
-   
+    <FlatList
+            data={ingredients}
+            renderItem={renderIngredientsItem}
+            keyExtractor={(item) => item.id}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+          />
     </View>
 
     </View>
@@ -118,4 +138,23 @@ const styles = StyleSheet.create({
   ingredientsView:{
     marginTop:spacing[10]
   },
+  ingredientsItemList:{
+    marginTop:19
+  },
+  ingredientItemWrapper:{
+    backgroundColor: colors.white,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 10,
+    marginRight: 15,
+    borderRadius: 15,
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.05,
+    shadowRadius: 10,
+    elevation: 2,
+  }
 })
