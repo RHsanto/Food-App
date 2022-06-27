@@ -1,5 +1,5 @@
 
-import { SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Image, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import Text from '../components/Text/Text';
 import { spacing } from "../theme/spacing";
 import { AntDesign ,FontAwesome} from '@expo/vector-icons';
@@ -51,7 +51,7 @@ export default function  Details({route,navigation}){
 
       </View>
       <View style={styles.PizzaImageView}>
-      {/* <Image source={image} /> */}
+      <Image source={image} />
       </View>
      </View>
 
@@ -103,5 +103,9 @@ const styles = StyleSheet.create({
   crustView:{
     paddingVertical:spacing[5]
   },
-  deliveryView:{}
+  PizzaImageView:{
+  height: 176,
+  width: 296,
+
+  }
 })
