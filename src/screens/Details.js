@@ -4,6 +4,7 @@ import Text from '../components/Text/Text';
 import { spacing } from "../theme/spacing";
 import { AntDesign ,FontAwesome} from '@expo/vector-icons';
 import { colors } from '../theme/color';
+import { typography } from '../theme/typography';
 export default function  Details({route,navigation}){
   // here catch item component
   const { item } = route.params;
@@ -36,15 +37,15 @@ export default function  Details({route,navigation}){
      <View style={styles.PizzaInfoView}>
       <View style={styles.PizzaInfoList}>
       <View style={styles.sizeView}>
-        <Text preset='h4'>Size</Text>
+        <Text style={styles.PizzaInfoColor}>Size</Text>
         <Text preset='h3'>{sizeName} {sizeNumber}</Text>
       </View>
       <View style={styles.crustView}>
-      <Text preset='h4'>Curst</Text>
+      <Text style={styles.PizzaInfoColor}>Curst</Text>
       <Text preset='h3'>{crust} </Text>
       </View>
-      <View style={styles.deliveryView}>
-       <Text preset='h4'>Delivery in</Text>
+      <View >
+       <Text style={styles.PizzaInfoColor}>Delivery in</Text>
        <Text preset='h3'>{deliveryTime}</Text>
       </View>
 
@@ -89,9 +90,18 @@ const styles = StyleSheet.create({
   },
   PizzaInfoView:{
     marginTop:spacing[8],
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center'
   },
-  PizzaInfoList:{},
-  sizeView:{},
-  crustView:{},
+  PizzaInfoColor:{
+    color:colors.grey,
+    marginBottom:5,
+    fontSize:14,
+    
+  },
+  crustView:{
+    paddingVertical:spacing[5]
+  },
   deliveryView:{}
 })
